@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="ICyclicNode" Id="{81cb4cf7-87b9-41f2-a63f-f0a7f4c7ec45}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface extends the INode interface with a run method for a cyclically update/monitoring.
+Examples for cyclic nodes are device drivers, meausurements or communication nodes (MES / other PLC / etc.)
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE ICyclicNode EXTENDS INode
+]]></Declaration>
+    <Method Name="run" Id="{5d597689-74f4-4ba2-8b3f-90ec5e8a9982}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method will be called in every cycle for a node. It can be used to implement hardware drivers/measurements/monitoring.
+The returned state defines the overall state of the node. It should return BUSY when the node executes a command, otherwise SUCCESS( or IDLE if there is nothing to do).
+(Simple monitoring is not a command an should return SUCCESS).
+
+**attention**: the returned SingleExecutionState will be evaluated cyclically wihtin the node tree.
+In case a node returns an ERROR state, the whole machine will be disabled.
+Return ERROR only for fatal or critical errors and handle other errors within the node.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD run : CNM_ReturnTypes.SingleExecutionState
+
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

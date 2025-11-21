@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="INodeControl" Id="{0fb91335-6250-4bfd-a71c-b8b1796b8d19}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface provides a fluent way to access the global control signals (stopRequests, overrides, step requests).
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+INTERFACE INodeControl EXTENDS __SYSTEM.IQueryInterface
+]]></Declaration>
+    <Property Name="override" Id="{067598bc-b8cb-429b-bf3f-8deba51abecd}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns the effective override for a node, which is the result of the multiplication of global and local override.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+PROPERTY override : LREAL]]></Declaration>
+      <Get Name="Get" Id="{3b6d9ee3-9bce-47c1-a33c-2f6ae6a63e85}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="stopRequest" Id="{de332b54-7833-4905-b16a-140831aeb624}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property represents the stop request signal which either the operator triggers from the HMI or which is set by an error.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+PROPERTY stopRequest : BOOL]]></Declaration>
+      <Get Name="Get" Id="{9d3ebe42-a84f-454c-95d2-a63425a4c3d8}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

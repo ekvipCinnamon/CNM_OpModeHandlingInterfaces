@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="INodeRequestProvider" Id="{affaccbb-2474-48b5-8878-8f35b467e0ab}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface provides interfaces for the default node requests: disable, enable, initialize and stopImmediate.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE INodeRequestProvider EXTENDS __SYSTEM.IQueryInterface
+]]></Declaration>
+    <Property Name="disable" Id="{aa0401d4-6560-4ea4-bb75-042a02a87cd7}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns the interface for the disabling request.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY disable :INodeRequest
+]]></Declaration>
+      <Get Name="Get" Id="{378565f1-cabc-443f-83eb-1427777c1e7b}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="enable" Id="{75ec5b44-116f-49e9-831d-112e1063d057}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns the interface for the disabling request.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY enable :INodeRequest
+]]></Declaration>
+      <Get Name="Get" Id="{b83d9506-687e-46ef-a749-ac54fd0f61c3}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="initialize" Id="{17002e0f-8efe-496e-8945-5702956df5a7}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns the interface for the disabling request.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY initialize :INodeRequest
+]]></Declaration>
+      <Get Name="Get" Id="{85c5c08a-23e5-4ce8-928c-ae32d9c55e54}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="stopImmediate" Id="{2c20dbc3-8a02-412c-b290-5334d0907445}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns the interface for the disabling request.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY stopImmediate :INodeRequest
+]]></Declaration>
+      <Get Name="Get" Id="{04134a1c-70ec-4141-a0ac-af371be295c4}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

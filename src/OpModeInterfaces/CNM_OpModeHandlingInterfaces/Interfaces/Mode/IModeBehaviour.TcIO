@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IModeBehaviour" Id="{478b9b6d-f024-4500-855b-0a2ce0d13013}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface defines the methods needed for the mode delegates.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE IModeBehaviour EXTENDS CNM_AbstractObject.IObject
+]]></Declaration>
+    <Property Name="enableManCmds" Id="{ca96c466-9552-4039-b317-d6737d22508f}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property is intended to inform cyclic nodes (devices) that manual commands are allowed to be executed.
+Usually only the manual mode behaviour sets this to true, but it may be also used for other custom modes if needed.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY enableManCmds : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{df3f3014-c7a6-499a-abc7-b8db3b6684be}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="enterMode" Id="{fd83ebe0-ce27-4181-87bf-91ff6aaa8ff3}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method is called once for every node when a new oepration mode is started.
+It is intended to inform the node that a new mode is startet, so you can throw events / MES notifications /  do data management here.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD enterMode
+VAR_INPUT
+	node : IOpModes;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="exitMode" Id="{91b027c6-d02d-4d26-8821-ec789f9a3058}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method is called once for every node when the current operation mode is stopped.
+It is intended to inform the node that the mode is stopped, so you can throw events / MES notifications /  do data management here.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD exitMode
+VAR_INPUT
+	node : IOpModes;
+END_VAR]]></Declaration>
+    </Method>
+    <Property Name="id" Id="{c533229e-fe9c-4115-906f-daa111c355f5}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns the id that was used to request the mode delegate.
+The mode provider class has to set it.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY id : UDINT
+]]></Declaration>
+      <Get Name="Get" Id="{94090d00-742e-443b-ba00-8a139a7f939e}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{afd592bf-f422-4904-bf16-ebe58da43eda}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="run" Id="{cdcb9d9c-89f0-47c1-ba13-2e60a7a5032c}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method is calling the operation mode methods for every node depending on the current behaviour.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD run :CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+	node :IOpModes;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IModeNode" Id="{b6fa8dc8-1150-4c8a-b83b-ca4180cd45cf}">
+    <Declaration><![CDATA[(*
+## short summary
+This interface defines the methods needed for operation mode dependent nodes.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE IModeNode EXTENDS INode, IOpModes
+]]></Declaration>
+    <Property Name="isEmpty" Id="{192e77ac-8afa-4522-a634-6d42cd0815a5}">
+      <Declaration><![CDATA[(*
+## short summary
+This property indicates that a node or subunit is empty (no parts are physically present). It is used for the HMI connection.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+{attribute 'monitoring' := 'call'}
+PROPERTY isEmpty : BOOL]]></Declaration>
+      <Get Name="Get" Id="{e387ed72-6c59-475a-9260-b07a3eb00112}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{886c2074-3e61-4598-aa42-709c0996e0ba}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="overwriteMode" Id="{cdd00777-9ecf-472a-8d3c-96dab2d0c271}">
+      <Declaration><![CDATA[(*
+## short summary
+This method allows the overwrite of the current mode state with a new mode, provided the current mode state is in `IDLE` or `SUCCESS` status,
+and the input mode object is valid. It determines the outcome of the overwrite operation and returns the appropriate result.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+## example
+
+```
+IF (opModeHandler.setMode(mode := automaticMode) = SingleExecutionResult.SUCCESS)
+	AND_THEN (dispensingStation.overwriteMode(mode := simulatedMode) = SingleExecutionResult.SUCCESS)
+THEN
+	opModeHandler.startMode();
+END_IF
+```
+
+*)
+METHOD overwriteMode : CNM_ReturnTypes.SingleExecutionResult
+VAR_INPUT
+	mode : IModeBehaviour;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="step" Id="{91d7fb41-8c6d-41ff-b64f-5e2bd3dc454d}">
+      <Declaration><![CDATA[(*
+## short summary
+This boolean can be used to set the step signal for a node for one plc cycle.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY step : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{81efc1a9-0ed3-460e-b21b-b29fcaca1783}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{15028928-70f7-484a-8081-02fd16d3ea47}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

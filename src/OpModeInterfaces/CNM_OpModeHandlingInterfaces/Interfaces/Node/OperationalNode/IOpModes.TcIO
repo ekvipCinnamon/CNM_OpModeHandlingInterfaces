@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IOpModes" Id="{c1f2797f-f549-45c1-a560-37e48f5da3ed}">
+    <Declaration><![CDATA[(*
+## short summary
+This interface defines the methods needed for the mode delegates. Mandatory mode methods must be implemented for all nodes.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE IOpModes EXTENDS __SYSTEM.IQueryInterface
+]]></Declaration>
+    <Folder Name="Mandatory" Id="{99ae10e9-585f-403c-b7a3-fba5c2bc354e}" />
+    <Folder Name="NonMandatory" Id="{47ba5a2a-f497-4a86-b455-fde862d11c2b}" />
+    <Method Name="enterNewMode" Id="{2a41962b-096d-48bd-92ce-cae06d36e9aa}" FolderPath="NonMandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method will be called once before a new mode is started. The method is called for exactly one cycle and
+is therefore suitable for triggering events or sending messages to MES systems.
+If the node should do nothing when changing the mode, leave it empty.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD enterNewMode
+]]></Declaration>
+    </Method>
+    <Method Name="exitCurrentMode" Id="{1ec4ad52-3b95-4b4e-a111-bd82369a91af}" FolderPath="NonMandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method will be called once after a mdoe was finished (stopped). The method is called for exactly one cycle and
+is therefore suitable for triggering events or sending messages to MES systems.
+If the node should do nothing when changing the mode, leave it empty.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD exitCurrentMode
+]]></Declaration>
+    </Method>
+    <Method Name="runAutomatic" Id="{d32e73fd-c484-450f-bee0-3e672d467c53}" FolderPath="Mandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method contains instructions and sequences for the automatic mode. It has to be overwritten for every node.
+If the node should do nothing, return a 'SUCCESS'.
+It should run in an endless loop until the mode is stopped immedtiately or a stop request is raised (THIS^.modeControl.stopRequest).
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD runAutomatic : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="runChangeOver" Id="{430a703a-f617-45ac-b1c2-7e78acda4cbe}" FolderPath="NonMandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method contains instructions and sequences for product type/variant changeover.
+This mode is intended for loading recipe data and / or change type/variant specific production tools.
+If the node should do nothing, return a 'SUCCESS'. If the changeove is finished, return 'SUCCESS'.
+
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD runChangeOver : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="runCleanUp" Id="{38681246-ad5e-4d6a-b6bf-423c0d206176}" FolderPath="NonMandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method contains instructions and sequences for the clean up mode.
+This mode is intended for running a machine empty and then cleaning up internal data.
+If the node should do nothing, return a 'SUCCESS'.
+It should run in an endless loop until the machine is empty or the mode is stopped immedtiately or a stop request is raised (THIS^.modeControl.stopRequest).
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD runCleanUp : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="runGhostMode" Id="{b0f51b74-04fc-45f5-8f65-098b1e61a725}" FolderPath="NonMandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method contains instructions and sequences for the ghost mode.
+This mode is intended for running a machine without parts but with real device movements. Make sure to handle the missing part present signals.
+If the node should do nothing, return a 'SUCCESS'.
+It should run in an endless loop until the mode is stopped immedtiately or a stop request is raised (THIS^.modeControl.stopRequest).
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD runGhostMode : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="runHoming" Id="{7e6de67c-b884-45c8-b029-e24ffc19fdfe}" FolderPath="Mandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method contains instructions and sequences for the homing mode. It has to be overwritten for every node.
+If the node should do nothing, return a 'SUCCESS'.
+It should stop (return 'SUCCESS') if the node is in home state or a stop request is raised (THIS^.modeControl.stopRequest).
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD runHoming : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="runManual" Id="{e784041c-96b2-4f08-8eb1-d3da22ea06a3}" FolderPath="Mandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method executes manual commands. It has to be overwritten for every node.
+If the node should do nothing, return a 'SUCCESS'.
+It should run endless until the manual mode is stopped via stop request or immediate stop.
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD runManual : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="runReferencing" Id="{b78a68f8-5c8c-42ea-9bab-b1e5422467be}" FolderPath="NonMandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method contains instructions and sequences for the referencing mode.
+This mode is intended for referencing a machine with relative components, e.g. axes without absoulute position encodeing, torque driven axes (e.g. a press), coupling of master/slave axes.
+If the node should do nothing, return a 'SUCCESS'.
+It should run until all devices are referenced or the mode is stopped immedtiately or a stop request is raised (THIS^.modeControl.stopRequest).
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD runReferencing : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="runService" Id="{8d72e99b-e202-4d55-9f01-6a956478250a}" FolderPath="NonMandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method contains instructions and sequences for the service mode.
+This mode is intended for supporting the maintanence of a machine, e.g. move components to a maintanence position, display and perform maintenance steps.
+If the node should do nothing, return a 'SUCCESS'.
+It should run until all servie requirements are done or the mode is stopped immedtiately or a stop request is raised (THIS^.modeControl.stopRequest).
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD runService : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="runSimulated" Id="{fd8e6bb1-84a5-48a5-a12f-e3bc3709b3a5}" FolderPath="NonMandatory\">
+      <Declaration><![CDATA[(*
+## short summary
+This method simulates a node/unit/machine without physical movements, but with all data handling, e.g. handshakes between units, communication with production systems, loading of data.
+This mode is intended for simulating the whole machine or single subunits by overwriting the mode for the subunit.
+If the node should do nothing, return a 'SUCCESS'.
+It should run endless until the mode is stopped immedtiately or a stop request is raised (THIS^.modeControl.stopRequest).
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD runSimulated : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

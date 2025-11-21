@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ModeControlButtonStruct" Id="{ab26b36f-3855-452b-84a9-788ef4d23703}">
+    <Declaration><![CDATA[TYPE ModeControlButtonStruct :
+STRUCT
+	Start :ButtonStruct:= (text:='%l%start%/l%');
+	Stop :ButtonStruct:= (text:='%l%stop%/l%');
+	StopRequest :ButtonStruct:= (text:='%l%stopRequest%/l%');
+	StepMode :ButtonStruct:= (text:='%l%stepMode%/l%');
+	Pause :ButtonStruct:= (text:='%l%pause%/l%');
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

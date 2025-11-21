@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="HmiStates" Id="{ecd2a9c2-929d-4fff-a968-e89085c6caab}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+{attribute 'to_string'}
+TYPE HmiStates :
+(
+	STOPPED := 0,
+	HOME,
+	RUNNING,
+	PAUSE,
+	STOP_PENDING,
+	OFFLINE
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

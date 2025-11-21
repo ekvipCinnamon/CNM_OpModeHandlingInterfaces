@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IBaseNode" Id="{2d52b12a-f93e-4225-88dd-602ade75bf2c}">
+    <Declaration><![CDATA[INTERFACE IBaseNode EXTENDS CNM_AbstractObject.IObject
+]]></Declaration>
+    <Method Name="disable" Id="{4e782427-5536-4f38-9c3a-e1123f873bbc}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method disables a node. It can take mutliple cycles. It has to be implemented for every node/device.
+The intention is to stop all movements here, e.g. axes should perform a quickstop, cylinders should be turned off, etc.
+The execute input needs a rising edge to execute the method.
+If there is nothing to stop, just return a 'SUCCESS' state.
+
+This method is called automatically by the operation mode handler.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD disable : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="enable" Id="{5c504ff3-94a9-4826-8394-ba7c265decfa}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method enables a node. It can take mutliple cycles. It has to be implemented for every node/device.
+The intention is to enable devices here, e.g. axes, laser, dispenser etc.
+The execute input needs a rising edge to execute the method.
+If there is nothing to enable, just return a 'SUCCESS' state.
+
+This method is called automatically by the operation mode handler.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD enable : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="initialize" Id="{9a5d12c2-dd4e-4834-9211-383938a7f814}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method contains instructions and sequences for the init mode.
+This mode is intended for initializing a machine, e.g. loading product type data from recipes, establish a connection to global production systems (MES).
+If the node should do nothing, return a 'SUCCESS'.
+It should run until all initializations are done or the mode is stopped immedtiately or a stop request is raised (THIS^.modeControl.stopRequest).
+This method is called automatically by the operation mode handler.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD initialize : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	pause :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="stopImmediate" Id="{c35427a9-7e43-4725-aeb2-4bad08e6bf97}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method executes stops all movements of a node. It has to be overwritten for every node.
+If the node should do nothing, return a 'SUCCESS'.
+It should stop axes/cylinders/process (e.g. laser welding, dispensing) endless until the manual mode is stopped via stop request or immediate stop.
+This method is called automatically by the operation mode handler before disabling the machine or if the operator selects an immediate stop.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD stopImmediate : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

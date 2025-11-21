@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IModeProvider" Id="{d5a66bed-65be-4c03-b9e1-41ea1857d239}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface defines method for a mode behaviour provider. 
+It can be used to inject custom modes into the HMI class.  
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE IModeProvider EXTENDS CNM_AbstractObject.IObject
+]]></Declaration>
+    <Method Name="getMode" Id="{c012462e-1147-429a-b6c6-37ef2e12173d}">
+      <Declaration><![CDATA[(*
+## short summary
+
+A method that returns an interface to an instance of a mode behaviour.
+It can be used to trabnslate the operation mode enum to a mode delegate. Overwrite this method for custom modes.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD getMode : IModeBehaviour
+VAR_INPUT
+	mode :UDINT;
+END_VAR]]></Declaration>
+    </Method>
+    <Property Name="mode" Id="{ea939fef-f84d-4aec-bbfc-f6e33ed9d62a}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns an IModeSelect that offers properties for the mandatory modes.
+The modes are accessable via fluent interface, e.g. myModeFactory.mode.automaticMode.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY mode : IModeSelect]]></Declaration>
+      <Get Name="Get" Id="{d157ca2b-5234-4ca8-bc56-60651276f0cf}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

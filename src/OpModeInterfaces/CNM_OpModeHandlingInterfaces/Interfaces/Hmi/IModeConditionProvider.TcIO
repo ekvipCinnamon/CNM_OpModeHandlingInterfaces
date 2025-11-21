@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IModeConditionProvider" Id="{c11e7804-0056-4c95-9b0d-25582459d042}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface provides a method that checks for each mode if it can be started.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE IModeConditionProvider
+]]></Declaration>
+    <Method Name="checkModeIsAllowed" Id="{31fb16ba-145d-460c-9dea-5a3b8fe2dd05}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method checks the start conditions for the selected operation mode.
+If the mode is allowed to be started, it returns TRUE.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD checkModeIsAllowed : BOOL
+VAR_INPUT
+	mode :UDINT;
+	node :INode;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

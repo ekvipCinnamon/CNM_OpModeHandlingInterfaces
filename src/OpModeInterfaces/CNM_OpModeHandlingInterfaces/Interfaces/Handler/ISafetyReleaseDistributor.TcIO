@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="ISafetyReleaseDistributor" Id="{64d3e0bb-6ab8-45b7-a68b-fd7d87cae596}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface provides an subscription for a global safety release notification and should be implemented by the safety handler.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE ISafetyReleaseDistributor EXTENDS IRunable
+]]></Declaration>
+    <Method Name="subscribe" Id="{8c8aaf15-624c-4660-b758-d21ff877ad83}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method adds the subscriber to a subscribption list. All subscribers are going to be notified, if the safety release changes.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2022 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD subscribe
+VAR_INPUT
+	(* class with the Interface ISafetySwitch, that can be switched on/off *)
+	subscriber	:ISafetySwitch;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

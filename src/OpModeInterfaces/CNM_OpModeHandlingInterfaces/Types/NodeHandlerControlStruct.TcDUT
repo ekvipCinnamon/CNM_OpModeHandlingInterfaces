@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="NodeHandlerControlStruct" Id="{fa421bdc-c033-4c17-b866-89326cb2c29d}">
+    <Declaration><![CDATA[TYPE NodeHandlerControlStruct :
+STRUCT
+	stop :BOOL; // stop request for stop after end of cycle
+	override :LREAL; // velocity orverride in % [0.0 ... 100.0]
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

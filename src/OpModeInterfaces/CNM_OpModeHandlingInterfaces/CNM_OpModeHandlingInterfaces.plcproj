@@ -1,0 +1,967 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FileVersion>1.0.0.0</FileVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{b4ec6acd-746a-4b62-b5e9-77e6147134b4}</ProjectGuid>
+    <SubObjectsSortedByName>true</SubObjectsSortedByName>
+    <DownloadApplicationInfo>true</DownloadApplicationInfo>
+    <WriteProductVersion>false</WriteProductVersion>
+    <GenerateTpy>false</GenerateTpy>
+    <Name>CNM_OpModeHandlingInterfaces</Name>
+    <ProgramVersion>3.1.4026.19</ProgramVersion>
+    <Application>{cef99db2-a40f-4212-8dd7-a5f05fb242dc}</Application>
+    <TypeSystem>{3b25078b-8844-403f-9f86-fb4c6702b5bb}</TypeSystem>
+    <Implicit_Task_Info>{c9176089-045d-4969-83f1-ebfc6eccc5f9}</Implicit_Task_Info>
+    <Implicit_KindOfTask>{3f8f7d82-9e2c-4e36-8ab5-eb1dffbac826}</Implicit_KindOfTask>
+    <Implicit_Jitter_Distribution>{df6048dd-5b64-4209-9df2-bd5177e9e4ba}</Implicit_Jitter_Distribution>
+    <LibraryReferences>{3999f718-741c-4289-a246-65ea8925e064}</LibraryReferences>
+    <Company>ekvip automation GmbH</Company>
+    <Released>false</Released>
+    <POUsForPropertyAccessIncluded>true</POUsForPropertyAccessIncluded>
+    <GlobalVersionStructureIncluded>true</GlobalVersionStructureIncluded>
+    <Title>CNM_OpModeHandlingInterfaces</Title>
+    <ProjectVersion>0.1.1.0</ProjectVersion>
+    <LibraryCategories>
+      <LibraryCategory xmlns="">
+        <Id>{ca3a09bf-efcf-4b52-8a8a-b5f3031f569c}</Id>
+        <Version>1.2.0.0</Version>
+        <DefaultName>ekvip</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{ca3a09bf-efcf-4b52-8a8a-b5f3031f569c}</Id>
+        </ParentCategory>
+        <DefaultName>drivers</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{25010ad3-b937-4910-85d4-a5f1eaa77f34}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>pneumatic</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{e4abe3d6-84d4-4bc2-aa00-b2603a9ab2bd}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{25010ad3-b937-4910-85d4-a5f1eaa77f34}</Id>
+        </ParentCategory>
+        <DefaultName>cylinder</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{73046a11-0ab9-4ac1-8fd6-5ee66ab71771}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e4abe3d6-84d4-4bc2-aa00-b2603a9ab2bd}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{028a014d-d40b-4afe-ac97-3b4d68e9a46d}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{25010ad3-b937-4910-85d4-a5f1eaa77f34}</Id>
+        </ParentCategory>
+        <DefaultName>seperator</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{936d0511-0c92-40ea-b26e-a7876f1f1245}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{028a014d-d40b-4afe-ac97-3b4d68e9a46d}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{4b897af6-5824-43f4-9bb0-0ed5e48795eb}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{25010ad3-b937-4910-85d4-a5f1eaa77f34}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{e91b0ee7-e367-4712-b312-de4634d07faa}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{4b897af6-5824-43f4-9bb0-0ed5e48795eb}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{1e2ce3ca-6e68-4109-80db-3368fc866162}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>signal</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{096cbf67-a9e2-4225-b232-2cbe7bbb5224}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>sensor</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{e9cff79e-5ed3-4989-ae09-b129a084a566}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{096cbf67-a9e2-4225-b232-2cbe7bbb5224}</Id>
+        </ParentCategory>
+        <DefaultName>analog</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{b853ab62-dd4b-46f8-b2e3-89bdab2387cd}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e9cff79e-5ed3-4989-ae09-b129a084a566}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{94e0015b-8412-48ab-846a-1cb4413b163f}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{096cbf67-a9e2-4225-b232-2cbe7bbb5224}</Id>
+        </ParentCategory>
+        <DefaultName>digital</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{70168dcc-6648-4b42-8915-36ee279e8a0e}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{94e0015b-8412-48ab-846a-1cb4413b163f}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{35c1a96b-c10e-4e39-84e1-125e3db9375c}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{096cbf67-a9e2-4225-b232-2cbe7bbb5224}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{a3a6c9bc-3a3c-4e92-9572-ef9fd6bacdcb}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{35c1a96b-c10e-4e39-84e1-125e3db9375c}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{3f58e257-9e4c-4aa0-81b6-071fcccd937c}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>drivesAndAxes</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{e2533e52-0341-4b40-85c4-56f99ba38fd0}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3f58e257-9e4c-4aa0-81b6-071fcccd937c}</Id>
+        </ParentCategory>
+        <DefaultName>servoAxes</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{5478f689-5f46-4a8f-8203-4b10d1da13be}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e2533e52-0341-4b40-85c4-56f99ba38fd0}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{c38b98f7-263c-4aec-9364-84252a62fd00}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3f58e257-9e4c-4aa0-81b6-071fcccd937c}</Id>
+        </ParentCategory>
+        <DefaultName>stepper</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{e91f9544-2e02-422b-a940-a8331836bba1}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{c38b98f7-263c-4aec-9364-84252a62fd00}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{956d86ef-370e-4ae4-aafc-70c4711199ed}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3f58e257-9e4c-4aa0-81b6-071fcccd937c}</Id>
+        </ParentCategory>
+        <DefaultName>frequencyConverter</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{83ab3cc8-fd53-463b-91ec-aec3b54c5505}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{956d86ef-370e-4ae4-aafc-70c4711199ed}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{75b1a663-cbf8-488e-a635-bf328603b57d}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3f58e257-9e4c-4aa0-81b6-071fcccd937c}</Id>
+        </ParentCategory>
+        <DefaultName>motorRelais</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{2c45cc06-3b98-433f-9692-3710030b631f}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{75b1a663-cbf8-488e-a635-bf328603b57d}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{e7957f37-62f8-4370-ac1a-4818f0b9c1c8}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3f58e257-9e4c-4aa0-81b6-071fcccd937c}</Id>
+        </ParentCategory>
+        <DefaultName>kinematics</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{733ceff2-8361-4c2d-a64b-5c88fe5ec932}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e7957f37-62f8-4370-ac1a-4818f0b9c1c8}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{e02758c2-d876-47ee-a464-15a7a5ed0048}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3f58e257-9e4c-4aa0-81b6-071fcccd937c}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{8aaaf748-e8cc-424e-8855-9cc3108cec96}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e02758c2-d876-47ee-a464-15a7a5ed0048}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{e12f10d5-96d5-42ba-bb12-acc312e1b9bd}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>controller</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{7cae716e-5bff-41f1-a7f6-19e7d06e72ea}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e12f10d5-96d5-42ba-bb12-acc312e1b9bd}</Id>
+        </ParentCategory>
+        <DefaultName>pid</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{74e4bc89-1af2-4ca6-8910-df9cfacd3bdd}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{7cae716e-5bff-41f1-a7f6-19e7d06e72ea}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{03de1009-e393-489c-8998-5e3e7c761828}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e12f10d5-96d5-42ba-bb12-acc312e1b9bd}</Id>
+        </ParentCategory>
+        <DefaultName>2Point</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{de937d34-349a-462c-a5b8-38b80775bea0}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{03de1009-e393-489c-8998-5e3e7c761828}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{472ae68f-5e0d-44eb-8ab9-b47814bdf05f}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e12f10d5-96d5-42ba-bb12-acc312e1b9bd}</Id>
+        </ParentCategory>
+        <DefaultName>fuzzy</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{ac0071c8-07af-4aee-a34d-5a5377ed485c}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{472ae68f-5e0d-44eb-8ab9-b47814bdf05f}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{db04dfae-df62-4b13-b2cf-80d52a28c17d}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e12f10d5-96d5-42ba-bb12-acc312e1b9bd}</Id>
+        </ParentCategory>
+        <DefaultName>multiSignal</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{525acc05-a926-4830-b77d-66e0038f3600}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{db04dfae-df62-4b13-b2cf-80d52a28c17d}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{6d220d46-b240-49e4-a82d-c475ff922c0a}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{e12f10d5-96d5-42ba-bb12-acc312e1b9bd}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{b59a8cf6-78eb-49c9-bd36-9046d3eb9370}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{6d220d46-b240-49e4-a82d-c475ff922c0a}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{50f9a4cf-71f9-4dc5-986a-9ae6d115b1df}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>vision</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{5315f7d2-1272-455a-8626-4b3c54a588cd}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{50f9a4cf-71f9-4dc5-986a-9ae6d115b1df}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{86a34816-9c74-49fe-aaed-6d9e72119d4f}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>printer</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{5c714349-c279-4d8b-9c5c-893e2e3b957d}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{86a34816-9c74-49fe-aaed-6d9e72119d4f}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{3d50063e-79e1-4830-b066-9eb9706b958f}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>reader</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{2bffbdb6-ec63-448b-b388-6382f310777d}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3d50063e-79e1-4830-b066-9eb9706b958f}</Id>
+        </ParentCategory>
+        <DefaultName>dmcAndBarcode</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{0f02ac2d-b043-48b0-bd42-6cf69719ac08}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{2bffbdb6-ec63-448b-b388-6382f310777d}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{bda730d2-d401-485a-8dc8-d288b6324b78}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3d50063e-79e1-4830-b066-9eb9706b958f}</Id>
+        </ParentCategory>
+        <DefaultName>rfid</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{87814046-a3e1-4e5a-acfe-40ec6eb953eb}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{bda730d2-d401-485a-8dc8-d288b6324b78}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{1c926478-b867-41e6-9cde-9cdb8d76e732}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3d50063e-79e1-4830-b066-9eb9706b958f}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{aee6117e-fd3c-4196-aa93-c9741d959e6f}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{1c926478-b867-41e6-9cde-9cdb8d76e732}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{83bca6d8-8b81-4c10-8beb-bdd115c5fcf8}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>safety</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{28dbaf32-a9e5-45ee-958e-ef4ea2c48681}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{83bca6d8-8b81-4c10-8beb-bdd115c5fcf8}</Id>
+        </ParentCategory>
+        <DefaultName>maintenanceUnit</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{429afa67-3680-44c5-a419-58e06b7cbb77}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{28dbaf32-a9e5-45ee-958e-ef4ea2c48681}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{7daac6d2-2efb-4fc1-855f-13c82c63accd}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{83bca6d8-8b81-4c10-8beb-bdd115c5fcf8}</Id>
+        </ParentCategory>
+        <DefaultName>doors</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{f05f4a99-3a32-4234-bc62-fe53c09d15ee}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{7daac6d2-2efb-4fc1-855f-13c82c63accd}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{7b1d1baf-603f-4e02-aed5-f6325767c1ca}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{83bca6d8-8b81-4c10-8beb-bdd115c5fcf8}</Id>
+        </ParentCategory>
+        <DefaultName>estop</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{f4f729cf-43a5-4a9f-95ad-3484ea7f6ed8}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{7b1d1baf-603f-4e02-aed5-f6325767c1ca}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{4b7d90e6-7dd2-4868-8950-f2a4349cf441}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{83bca6d8-8b81-4c10-8beb-bdd115c5fcf8}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{f765fd9c-91f2-46a5-b941-982846da47e7}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{4b7d90e6-7dd2-4868-8950-f2a4349cf441}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{af3d32d3-3f65-4379-8954-2c8fc8f70553}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>laser</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{698a4dd1-8a64-48e2-b2af-7ae726491730}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{af3d32d3-3f65-4379-8954-2c8fc8f70553}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{f9e7ae78-d01b-440c-a250-06237f27960f}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>robot</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{0788e6d7-0d1c-4cb4-beb0-fa17e7b152c0}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{f9e7ae78-d01b-440c-a250-06237f27960f}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{1fe02a87-5071-4a3d-ab12-86e7350fa816}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{727d6b4b-cc5a-4953-a3e5-ce742d75ba85}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{a7569931-67d5-46dd-8fc4-7856fafe1e5d}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{1fe02a87-5071-4a3d-ab12-86e7350fa816}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{437df8d3-a372-4543-8591-e42ef911f9d2}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{ca3a09bf-efcf-4b52-8a8a-b5f3031f569c}</Id>
+        </ParentCategory>
+        <DefaultName>functionUnits</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{89be0d93-624f-4512-9fe0-aa893fcebd80}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{437df8d3-a372-4543-8591-e42ef911f9d2}</Id>
+        </ParentCategory>
+        <DefaultName>conveyor</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{3c23b18c-af39-4eff-bfc4-ebd49d247a37}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{89be0d93-624f-4512-9fe0-aa893fcebd80}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{4ba8baef-af95-4408-b322-de6c6110a060}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{437df8d3-a372-4543-8591-e42ef911f9d2}</Id>
+        </ParentCategory>
+        <DefaultName>robot</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{c4a53a9e-539c-4e59-8636-8d8986792695}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{4ba8baef-af95-4408-b322-de6c6110a060}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{58229e4c-eeec-415b-a3c7-e31f9e545925}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{437df8d3-a372-4543-8591-e42ef911f9d2}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{1e94f60b-d70e-4497-92c7-0095729a3c68}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{58229e4c-eeec-415b-a3c7-e31f9e545925}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{c4b5362a-20b1-46cd-8aa7-ad51c515a16e}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{ca3a09bf-efcf-4b52-8a8a-b5f3031f569c}</Id>
+        </ParentCategory>
+        <DefaultName>projectSpecific</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{2fc631c8-3271-4b5a-9c6a-4609bcbfae6f}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{c4b5362a-20b1-46cd-8aa7-ad51c515a16e}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{f33ee693-3f84-4c05-b521-9e8726aa6e47}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{ca3a09bf-efcf-4b52-8a8a-b5f3031f569c}</Id>
+        </ParentCategory>
+        <DefaultName>types</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{cc5d0cc4-d53d-4d52-87f6-4edfc831c817}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{f33ee693-3f84-4c05-b521-9e8726aa6e47}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{0b972127-b8b0-457d-ac79-5b824eabb860}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{ca3a09bf-efcf-4b52-8a8a-b5f3031f569c}</Id>
+        </ParentCategory>
+        <DefaultName>base</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{0036b3c6-5275-44f6-b8e0-f86daf212019}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{0b972127-b8b0-457d-ac79-5b824eabb860}</Id>
+        </ParentCategory>
+        <DefaultName>types</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{c9f7ca62-2162-4472-b0e3-634939934222}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{0036b3c6-5275-44f6-b8e0-f86daf212019}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{1506c6cb-5ef0-4ff5-98f9-c5353a464e9d}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{0b972127-b8b0-457d-ac79-5b824eabb860}</Id>
+        </ParentCategory>
+        <DefaultName>utilities</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{5197f19d-28f3-4385-8385-282e411eb3be}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{1506c6cb-5ef0-4ff5-98f9-c5353a464e9d}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{bf4a78c6-64b1-45a7-b213-884ea08e03d9}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{0b972127-b8b0-457d-ac79-5b824eabb860}</Id>
+        </ParentCategory>
+        <DefaultName>machine</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{7da16596-93db-4561-b5a9-a0f18928e128}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{bf4a78c6-64b1-45a7-b213-884ea08e03d9}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{ebbdac88-14f3-434c-aee7-b64cdc0f41a2}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{0b972127-b8b0-457d-ac79-5b824eabb860}</Id>
+        </ParentCategory>
+        <DefaultName>connectivity</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{746cb2ad-cc0d-4112-8611-93b4e5597f9e}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{ebbdac88-14f3-434c-aee7-b64cdc0f41a2}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{3db33dcf-c3ec-495c-80c8-9fcf1f215161}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{0b972127-b8b0-457d-ac79-5b824eabb860}</Id>
+        </ParentCategory>
+        <DefaultName>miscellaneous</DefaultName>
+      </LibraryCategory>
+      <LibraryCategory xmlns="">
+        <Id>{d996b195-e28d-4616-9d3f-d9b161308663}</Id>
+        <Version>1.2.0.0</Version>
+        <ParentCategory>
+          <Id>{3db33dcf-c3ec-495c-80c8-9fcf1f215161}</Id>
+        </ParentCategory>
+        <DefaultName>unitTest</DefaultName>
+      </LibraryCategory>
+    </LibraryCategories>
+    <SelectedLibraryCategories>
+      <Id xmlns="">{1506c6cb-5ef0-4ff5-98f9-c5353a464e9d}</Id>
+    </SelectedLibraryCategories>
+    <DefaultNamespace>CNM_OpModeHandlingInterfaces</DefaultNamespace>
+    <Placeholder>CNM_OpModeHandlingInterfaces</Placeholder>
+    <Author>tsch</Author>
+    <Description>Providing interfaces that define handling operation modes in an industrial machine.</Description>
+    <LanguageModelAttributeForLibrary>qualified-access-only</LanguageModelAttributeForLibrary>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces" />
+    <Folder Include="Interfaces\Handler" />
+    <Folder Include="Interfaces\Mode" />
+    <Folder Include="Interfaces\Hmi" />
+    <Folder Include="Interfaces\Node" />
+    <Folder Include="Interfaces\Node\Base" />
+    <Folder Include="Interfaces\Node\OperationalNode" />
+    <Folder Include="Project Information" />
+    <Folder Include="Types" />
+    <Folder Include="Version" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\Handler\IOpModeHandlerMessageService.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Handler\INodeRequestProvider.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Handler\IOpModeHandler.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Handler\ISafetyReleaseDistributor.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Handler\ISafetySwitch.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Handler\IOpModeHandlerHmi.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Hmi\IHmiApi.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Hmi\IModeConditionProvider.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\IRunable.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Mode\IModeBehaviour.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Mode\IModeProvider.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Mode\IModeSelect.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Node\Base\INode.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Node\Base\INodeControl.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Node\Base\INodeRequest.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Node\ICyclicNode.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Node\INodeMessageService.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Node\OperationalNode\IModeNode.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Interfaces\Node\OperationalNode\IOpModes.TcIO">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Project Information\F_GetCompany.TcPOU">
+      <SubType>Code</SubType>
+      <SystemCall>true</SystemCall>
+    </Compile>
+    <Compile Include="Project Information\F_GetTitle.TcPOU">
+      <SubType>Code</SubType>
+      <SystemCall>true</SystemCall>
+    </Compile>
+    <Compile Include="Project Information\F_GetVersion.TcPOU">
+      <SubType>Code</SubType>
+      <SystemCall>true</SystemCall>
+    </Compile>
+    <Compile Include="Types\ButtonStruct.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\HmiStates.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\ModeControlButtonStruct.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Types\NodeHandlerControlStruct.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Version\Global_Version.TcGVL">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderReference Include="CNM_AbstractObject">
+      <DefaultResolution>CNM_AbstractObject, * (ekvip automation GmbH)</DefaultResolution>
+      <Namespace>CNM_AbstractObject</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="CNM_MessageInterfaces">
+      <DefaultResolution>CNM_MessageInterfaces, * (ekvip automation GmbH)</DefaultResolution>
+      <Namespace>CNM_MessageInterfaces</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="CNM_ReturnTypes">
+      <DefaultResolution>CNM_ReturnTypes, * (ekvip automation GmbH)</DefaultResolution>
+      <Namespace>CNM_ReturnTypes</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_System">
+      <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PlaceholderResolution Include="CNM_AbstractObject">
+      <Resolution>CNM_AbstractObject, 1.* (ekvip automation GmbH)</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="CNM_MessageInterfaces">
+      <Resolution>CNM_MessageInterfaces, 0.1.* (ekvip automation GmbH) [Default]</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="CNM_ReturnTypes">
+      <Resolution>CNM_ReturnTypes, 1.* (ekvip automation GmbH) [Default]</Resolution>
+    </PlaceholderResolution>
+    <PlaceholderResolution Include="Tc2_System">
+      <Resolution>Tc2_System, 3.9.* (Beckhoff Automation GmbH) [Default]</Resolution>
+    </PlaceholderResolution>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CNM_OpModeHandlingInterfaces.tmc">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ProjectExtensions>
+    <PlcProjectOptions>
+      <XmlArchive>
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
+      <v n="Name">"&lt;ProjectRoot&gt;"</v>
+      <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+        <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
+        <o>
+          <v n="Name">"{192FAD59-8248-4824-A8DE-9177C94C195A}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{246001F4-279D-43AC-B241-948EB31120E1}</v>
+        <o>
+          <v n="Name">"{246001F4-279D-43AC-B241-948EB31120E1}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{29BD8D0C-3586-4548-BB48-497B9A01693F}</v>
+        <o>
+          <v n="Name">"{29BD8D0C-3586-4548-BB48-497B9A01693F}"</v>
+          <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
+            <v>NamingConventions</v>
+            <o>
+              <v n="Name">"NamingConventions"</v>
+              <d n="SubKeys" t="Hashtable" />
+              <d n="Values" t="Hashtable" />
+            </o>
+            <v>Rules</v>
+            <o>
+              <v n="Name">"Rules"</v>
+              <d n="SubKeys" t="Hashtable" />
+              <d n="Values" t="Hashtable" />
+            </o>
+          </d>
+          <d n="Values" t="Hashtable" />
+        </o>
+        <v>{40450F57-0AA3-4216-96F3-5444ECB29763}</v>
+        <o>
+          <v n="Name">"{40450F57-0AA3-4216-96F3-5444ECB29763}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>ActiveVisuProfile</v>
+            <v>IR0whWr8bwcQCAAAY7rhNAAAAACAAgAAGMPQIgAAAAABAAAAAAAAAAEaUwB5AHMAdABlAG0ALgBTAHQAcgBpAG4AZwACTHsAZgA5ADUAYgBiADQAMgA2AC0ANQA1ADIANAAtADQAYgA0ADUALQA5ADQAMAAwAC0AZgBiADAAZgAyAGUANwA3AGUANQAxAGIAfQADCE4AYQBtAGUABDBUAHcAaQBuAEMAQQBUACAAMwAuADEAIABCAHUAaQBsAGQAIAA0ADAAMgA2AC4ANwAFFlAAcgBvAGYAaQBsAGUARABhAHQAYQAGTHsAMQA2AGUANQA1AGIANgAwAC0ANwAwADQAMwAtADQAYQA2ADMALQBiADYANQBiAC0ANgAxADQANwAxADMAOAA3ADgAZAA0ADIAfQAHEkwAaQBiAHIAYQByAGkAZQBzAAhMewAzAGIAZgBkADUANAA1ADkALQBiADAANwBmAC0ANABkADYAZQAtAGEAZQAxAGEALQBhADgAMwAzADUANgBhADUANQAxADQAMgB9AAlMewA5AGMAOQA1ADgAOQA2ADgALQAyAGMAOAA1AC0ANAAxAGIAYgAtADgAOAA3ADEALQA4ADkANQBmAGYAMQBmAGUAZABlADEAYQB9AAoOVgBlAHIAcwBpAG8AbgALBmkAbgB0AAwKVQBzAGEAZwBlAA0KVABpAHQAbABlAA4aVgBpAHMAdQBFAGwAZQBtAE0AZQB0AGUAcgAPDkMAbwBtAHAAYQBuAHkAEAxTAHkAcwB0AGUAbQARElYAaQBzAHUARQBsAGUAbQBzABIwVgBpAHMAdQBFAGwAZQBtAHMAUwBwAGUAYwBpAGEAbABDAG8AbgB0AHIAbwBsAHMAEyhWAGkAcwB1AEUAbABlAG0AcwBXAGkAbgBDAG8AbgB0AHIAbwBsAHMAFCRWAGkAcwB1AEUAbABlAG0AVABlAHgAdABFAGQAaQB0AG8AcgAVIlYAaQBzAHUATgBhAHQAaQB2AGUAQwBvAG4AdAByAG8AbAAWHlYAaQBzAHUARQBsAGUAbQBYAFkAQwBoAGEAcgB0ABcUVgBpAHMAdQBJAG4AcAB1AHQAcwAYGFYAaQBzAHUARQBsAGUAbQBCAGEAcwBlABkmRABlAHYAUABsAGEAYwBlAGgAbwBsAGQAZQByAHMAVQBzAGUAZAAaCGIAbwBvAGwAGyJQAGwAdQBnAGkAbgBDAG8AbgBzAHQAcgBhAGkAbgB0AHMAHEx7ADQAMwBkADUAMgBiAGMAZQAtADkANAAyAGMALQA0ADQAZAA3AC0AOQBlADkANAAtADEAYgBmAGQAZgAzADEAMABlADYAMwBjAH0AHRxBAHQATABlAGEAcwB0AFYAZQByAHMAaQBvAG4AHhRQAGwAdQBnAGkAbgBHAHUAaQBkAB8WUwB5AHMAdABlAG0ALgBHAHUAaQBkACBIYQBmAGMAZAA1ADQANAA2AC0ANAA5ADEANAAtADQAZgBlADcALQBiAGIANwA4AC0AOQBiAGYAZgBlAGIANwAwAGYAZAAxADcAIRRVAHAAZABhAHQAZQBJAG4AZgBvACJMewBiADAAMwAzADYANgBhADgALQBiADUAYwAwAC0ANABiADkAYQAtAGEAMAAwAGUALQBlAGIAOAA2ADAAMQAxADEAMAA0AGMAMwB9ACMOVQBwAGQAYQB0AGUAcwAkTHsAMQA4ADYAOABmAGYAYwA5AC0AZQA0AGYAYwAtADQANQAzADIALQBhAGMAMAA2AC0AMQBlADMAOQBiAGIANQA1ADcAYgA2ADkAfQAlTHsAYQA1AGIAZAA0ADgAYwAzAC0AMABkADEANwAtADQAMQBiADUALQBiADEANgA0AC0ANQBmAGMANgBhAGQAMgBiADkANgBiADcAfQAmFk8AYgBqAGUAYwB0AHMAVAB5AHAAZQAnVFUAcABkAGEAdABlAEwAYQBuAGcAdQBhAGcAZQBNAG8AZABlAGwARgBvAHIAQwBvAG4AdgBlAHIAdABpAGIAbABlAEwAaQBiAHIAYQByAGkAZQBzACgQTABpAGIAVABpAHQAbABlACkUTABpAGIAQwBvAG0AcABhAG4AeQAqHlUAcABkAGEAdABlAFAAcgBvAHYAaQBkAGUAcgBzACs4UwB5AHMAdABlAG0ALgBDAG8AbABsAGUAYwB0AGkAbwBuAHMALgBIAGEAcwBoAHQAYQBiAGwAZQAsEnYAaQBzAHUAZQBsAGUAbQBzAC0McwB5AHMAdABlAG0ALkg2AGMAYgAxAGMAZABlADEALQBkADUAZABjAC0ANABhADMAYgAtADkAMAA1ADQALQAyADEAZgBhADcANQA2AGEAMwBmAGEANAAvKEkAbgB0AGUAcgBmAGEAYwBlAFYAZQByAHMAaQBvAG4ASQBuAGYAbwAwTHsAYwA2ADEAMQBlADQAMAAwAC0ANwBmAGIAOQAtADQAYwAzADUALQBiADkAYQBjAC0ANABlADMAMQA0AGIANQA5ADkANgA0ADMAfQAxGE0AYQBqAG8AcgBWAGUAcgBzAGkAbwBuADIYTQBpAG4AbwByAFYAZQByAHMAaQBvAG4AMwxMAGUAZwBhAGMAeQA0MEwAYQBuAGcAdQBhAGcAZQBNAG8AZABlAGwAVgBlAHIAcwBpAG8AbgBJAG4AZgBvADUwTABvAGEAZABMAGkAYgByAGEAcgBpAGUAcwBJAG4AdABvAFAAcgBvAGoAZQBjAHQANhpDAG8AbQBwAGEAdABpAGIAaQBsAGkAdAB5ANAAAhoD0AMBLQTQBQYaB9AHCBoBRQcJCdAACRoERQoLBAQAAAAGAAAAAAAAAAAAAADQDAutAgAAANANAS0O0A8BLRDQAAkaBEUKCwQEAAAABgAAAAAAAAAAAAAA0AwLrQEAAADQDQEtEdAPAS0Q0AAJGgRFCgsEBAAAAAYAAAAAAAAAAAAAANAMC60CAAAA0A0BLRLQDwEtENAACRoERQoLBAQAAAAGAAAAAAAAAAAAAADQDAutAgAAANANAS0T0A8BLRDQAAkaBEUKCwQEAAAABgAAAAAAAAAAAAAA0AwLrQIAAADQDQEtFNAPAS0Q0AAJGgRFCgsEBAAAAAYAAAAAAAAAAAAAANAMC60CAAAA0A0BLRXQDwEtENAACRoERQoLBAQAAAAGAAAAAAAAAAAAAADQDAutAgAAANANAS0W0A8BLRDQAAkaBEUKCwQEAAAABgAAAAAAAAAAAAAA0AwLrQIAAADQDQEtF9APAS0Q0AAJGgRFCgsEBAAAAAYAAAAAAAAAAAAAANAMC60EAAAA0A0BLRjQDwEtENAZGq0BRRscAdAAHBoCRR0LBAQAAAACAAAAAAAAAAAAAADQHh8tINAhIhoCRSMkAtAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAAAAANADAS0n0CgBLRHQKQEtENAAJRoFRQoLBAMAAAADAAAAAAAAAAoAAADQJgutAQAAANADAS0n0CgBLRHQKQEtEJoqKwFFAAEC0AABLSzQAAEtLdAAHy0u0C8wGgPQMQutAQAAANAyC60jAAAA0DMarQDQNDAaA9AxC60CAAAA0DILrQYAAADQMxqtANA1Gq0A0DYarQA=</v>
+          </d>
+        </o>
+        <v>{8A0FB252-96EB-4DCC-A5B4-B4804D05E2D6}</v>
+        <o>
+          <v n="Name">"{8A0FB252-96EB-4DCC-A5B4-B4804D05E2D6}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="Boolean">
+            <v>WriteLineIDs</v>
+            <v>False</v>
+          </d>
+        </o>
+        <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
+        <o>
+          <v n="Name">"{8F99A816-E488-41E4-9FA3-846536012284}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="String">
+            <v>DisabledWarningIds</v>
+            <v>410,5410</v>
+          </d>
+        </o>
+        <v>{F66C7017-BDD8-4114-926C-81D6D687E35F}</v>
+        <o>
+          <v n="Name">"{F66C7017-BDD8-4114-926C-81D6D687E35F}"</v>
+          <d n="SubKeys" t="Hashtable" />
+          <d n="Values" t="Hashtable" ckt="String" cvt="Boolean">
+            <v>CalcActiveTransOnly</v>
+            <v>True</v>
+          </d>
+        </o>
+      </d>
+      <d n="Values" t="Hashtable" />
+    </o>
+        </Data>
+        <TypeList>
+          <Type n="Boolean">System.Boolean</Type>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
+    </PlcProjectOptions>
+  </ProjectExtensions>
+</Project>

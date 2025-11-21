@@ -1,0 +1,14 @@
+# load CI configs from a central location (https://ekv-app-git-p01.ekvip.de/ttr/ci-configs), 
+# so we can share them between repositories
+# for the runner to discover the tests, this repository has to 
+# contain a folder named "test", containing its test project .sln file
+
+ 
+
+include:
+    # load config that creates a documentation of the project
+  - project: 'ci/twincat-ci-configs'
+    ref: HEAD
+    file: '/tc-docugen.yml'
+    inputs:
+      sln_path: './src/OpModeInterfaces/CNM_OpModeInterfacesLib.sln'

@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IModeSelect" Id="{2ddd961e-5f3d-4333-9186-b47f979280e3}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This is an interface to fluently provide the mandatory mode behaviours.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE IModeSelect EXTENDS CNM_AbstractObject.IObject
+]]></Declaration>
+    <Property Name="automaticMode" Id="{7fced56b-1f61-4fb5-bcc1-ee7ca2d23cfe}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns an IModeBehaviour that implements the delegate for the automatic mode.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+PROPERTY automaticMode : IModeBehaviour
+]]></Declaration>
+      <Get Name="Get" Id="{d1426e91-3591-4e75-9f0c-d3d4f90cf203}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="homingMode" Id="{c4b05bbc-35f5-478c-ae88-f68ffea11a17}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns an IModeBehaviour that implements the delegate for the homing mode.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY homingMode : IModeBehaviour
+]]></Declaration>
+      <Get Name="Get" Id="{9340d70a-27a0-413f-9c7d-5a2e5fb49d6f}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="manualMode" Id="{58327d0e-f53a-4683-84ec-933d76c8ceba}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns an IModeBehaviour that implements the delegate for the manual mode.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY manualMode : IModeBehaviour
+]]></Declaration>
+      <Get Name="Get" Id="{3388020e-b34b-4e20-a612-dd350b4d72bf}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="noMode" Id="{b8569af4-a691-4d85-ba80-ee32f6a9763a}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property returns an IModeBehaviour that implements the delegate for no operation mode.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY noMode : IModeBehaviour]]></Declaration>
+      <Get Name="Get" Id="{77c112a7-35a6-4bf9-91b4-a6c5a88fb3c5}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+  </Itf>
+</TcPlcObject>

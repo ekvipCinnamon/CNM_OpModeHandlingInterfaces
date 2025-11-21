@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IOpModeHandler" Id="{ea3b342f-554a-46bb-9dec-854326f6f6cb}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface provides the cyclic run method and the fluent requests interface for a operation mode handler.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+INTERFACE IOpModeHandler EXTENDS CNM_AbstractObject.IObject, ISafetySwitch, IOpModeHandlerHmi, IRunable
+]]></Declaration>
+  </Itf>
+</TcPlcObject>

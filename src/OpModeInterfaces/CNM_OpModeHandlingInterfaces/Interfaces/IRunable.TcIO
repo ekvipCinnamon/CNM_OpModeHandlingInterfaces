@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IRunable" Id="{9364777c-fdfa-42dc-9681-97307d7296ee}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface provides a void run() method without parameters.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE IRunable EXTENDS CNM_AbstractObject.IObject
+]]></Declaration>
+    <Method Name="run" Id="{58b68daa-a67a-4997-a227-3b41117b4f15}">
+      <Declaration><![CDATA[(*
+## short summary
+
+A method that should be called cyclically to update and execute a class instance.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD run
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IOpModeHandlerHmi" Id="{5d964e6d-f354-4de0-af7b-311756746cb2}">
+    <Declaration><![CDATA[(*
+## short summary
+This interface provides an API to control the operation mode handler.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+INTERFACE IOpModeHandlerHmi EXTENDS CNM_AbstractObject.IObject
+]]></Declaration>
+    <Method Name="enableStepping" Id="{75459aff-2027-4d72-b32b-3d4f5b826a8a}">
+      <Declaration><![CDATA[(*
+## short summary
+This methods enables the stepping operation on a given node and all of its subnodes.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD enableStepping : CNM_ReturnTypes.SingleExecutionResult
+VAR_INPUT
+	(* the node on which stepping should be enabled *)
+	node :INode;
+END_VAR
+
+]]></Declaration>
+    </Method>
+    <Property Name="globalMessageService" Id="{0b62b125-46bb-47dd-b081-ea03b1929503}">
+      <Declaration><![CDATA[(*
+## short summary
+This property can be used to inject a message service. Messages will be forwarded to that message service if it is set.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY globalMessageService : CNM_MessageInterfaces.IMessageService
+]]></Declaration>
+      <Set Name="Set" Id="{91145fdd-215d-4118-982d-4fbd3891a347}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="globalOverride" Id="{b36fd7d0-15f8-4298-9094-42a787d9f414}">
+      <Declaration><![CDATA[(*
+## short summary
+This property can be used to set the global override from the HMI and to read back the current override for the HMI.
+
+**information**: the override has a range from 0.0 to 100.0 and will be limited to the upper/lower bound.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY globalOverride : LREAL]]></Declaration>
+      <Get Name="Get" Id="{41555d1a-9127-43e4-afd8-8528a9ce34ef}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{ba7cf193-572c-49cb-ad1b-7fcb77846cc5}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="modeIsExecuting" Id="{4898026b-96fc-4d07-967b-06bc293ebf00}">
+      <Declaration><![CDATA[(*
+## short summary
+This property indicates that a operation is being executed.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY modeIsExecuting : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{bbb46113-788e-42c0-8db8-74cb490680c9}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="pause" Id="{73a4cebc-9e55-446d-a2cb-f6a118b6557a}">
+      <Declaration><![CDATA[(*
+## short summary
+This property can be used to pause the currently running operation mode from the HMI and to read back if the mode is paused.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY pause : BOOL]]></Declaration>
+      <Get Name="Get" Id="{401951f0-d839-4de0-ba33-c90dd490b60a}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{7f2c59b2-5f8a-4bd2-bd06-f8f54499c1e6}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="rootNode" Id="{1a031fb7-1f8c-4a39-a162-df5bb88684b7}">
+      <Declaration><![CDATA[(*
+## short summary
+This property returns the INodeHmiApi interface of the root node from this opmode handler.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY rootNode :INode]]></Declaration>
+      <Get Name="Get" Id="{b41ef915-52a7-46dc-a4d8-d0f9f623ebff}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="setMode" Id="{0f8b1663-750b-44e7-91e4-34ddb59f3437}">
+      <Declaration><![CDATA[(*
+## short summary
+This method sets a mode for the rootnode or, if specified, for a single node and its subnodes.
+It is only allowed to overwrite the mode if the rootNode or the specified node is not in busy state.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+## example
+set it for the whole machine:
+```
+myOpmodeHandler.setMode(
+	mode := automaticMode
+);
+```
+
+overwrite the mode of specified node:
+```
+myOpmodeHandler.setMode(
+	mode := serviceMode,
+	node := despensingUnit
+);
+```
+
+*)
+METHOD setMode : CNM_ReturnTypes.SingleExecutionResult
+VAR_INPUT
+	(* the mode instance that should be set *)
+	mode : IModeBehaviour;
+	(* optionally: a specified node in the tree that is not the subtree (if 0, the rootNode will be adressed) *)
+	node : IModeNode := 0;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="startMode" Id="{fbac0710-b74f-4aa0-9d8f-314bb865f572}">
+      <Declaration><![CDATA[(*
+## short summary
+This method starts the currently selected operation mode if all safety requirements are met.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+## example
+```
+CASE step OF
+	0:	// choose and set mode
+		IF (handler.setMode(automaticMode) = SUCCESS ) THEN
+			step := 1;
+		END_IF
+	1:	// start mode
+		IF (handler.startMode() = SUCCESS) THEN
+			step := 2;
+		END_IF
+	2: // stop mode if requested
+		IF ( stopRequested ) THEN
+			IF ( handler.stopMode() = SUCCESS ) THEN
+				step := 0;
+			END_IF
+		END_IF
+END_CASE
+```
+
+*)
+
+METHOD startMode :CNM_ReturnTypes.SingleExecutionResult
+VAR_INPUT
+	(* optionally: a specified node in the tree that is not the subtree (if 0, the rootNode will be adressed) *)
+	node : INode := 0;
+END_VAR]]></Declaration>
+    </Method>
+    <Method Name="stopMode" Id="{a95dd868-9569-4bc0-b34c-b75e40aebe18}">
+      <Declaration><![CDATA[(*
+## short summary
+This method stops the currently running operation mode.
+If the immediately flag is set, the current operation modewill be aborted and the machine will execute a fast stop.
+If it is not set, the stop request flag for all nodes will be set and the operation modes should exit with a defined state.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+## parameters
+**return**: `CNM_ReturnTypes.SingleExecutionState`
+- `SUCCESS`: the mode was stopped
+- `BUSY`: mode is still stopping
+
+## example
+```
+CASE step OF
+	0:	// choose and set mode
+		IF (handler.setMode(automaticMode) = SUCCESS ) THEN
+			step := 1;
+		END_IF
+	1:	// start mode
+		IF (handler.startMode() = SUCCESS) THEN
+			step := 2;
+		END_IF
+	2: // stop mode if requested
+		IF ( stopRequested ) THEN
+			IF ( handler.stopMode() = SUCCESS ) THEN
+				step := 0;
+			END_IF
+		END_IF
+END_CASE
+```
+
+*)
+
+METHOD stopMode : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	(* if this flag is set, the current operation mode will be aborted and the machine will execute a fast stop *)
+	immediately :BOOL := FALSE;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="INodeMessageService" Id="{50a5b8b7-d08d-4df1-b01a-d486578237cd}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface extends the IMessageInterface with the possibility to inject a global message service where the errors will be forwarded to.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE INodeMessageService EXTENDS CNM_MessageInterfaces.IMessageService
+]]></Declaration>
+    <Property Name="globalMessageService" Id="{09b1d4b1-f7c6-441e-96d5-8a2870d0a73a}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property can be used to set the global message service interface during initialization.
+The node message service will inform the node about the error and then forward the error to the global message service for handling the error.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY globalMessageService : CNM_MessageInterfaces.IMessageService
+]]></Declaration>
+      <Set Name="Set" Id="{bbdadef5-c69d-4df8-a24f-9da4c2eee2a2}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

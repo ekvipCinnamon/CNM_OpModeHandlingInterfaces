@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="INodeRequest" Id="{959b6fed-62a1-4f43-91e2-8444d9cc6860}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface defines the methods needed for the node request delegates.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE INodeRequest EXTENDS __SYSTEM.IQueryInterface
+]]></Declaration>
+    <Method Name="run" Id="{99cb49fd-abb5-4ad5-bb01-7c7066a11006}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method is calling the node request methods for every node depending on the current request.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD run :CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+	node :INode;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

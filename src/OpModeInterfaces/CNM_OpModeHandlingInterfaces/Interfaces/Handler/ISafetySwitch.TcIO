@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="ISafetySwitch" Id="{b97c3403-2ee2-49e8-ba0c-1a4f3ce09363}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface needs to be implemented for a subscription to the ISafetyReleaseDistributer interface.
+The provided methods switchOn and switchOff are automatically called if the safety release changes.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE ISafetySwitch EXTENDS CNM_AbstractObject.IObject
+]]></Declaration>
+    <Property Name="isSwitchedOn" Id="{6a97324f-5f4e-45ba-913a-c5eb3c459691}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property indicates that the unit is enabled and all safety requirements are met.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+PROPERTY isSwitchedOn : BOOL]]></Declaration>
+      <Get Name="Get" Id="{ca5d0204-bae3-4a80-83f2-2501253d9e44}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="switchOff" Id="{f6470e47-f855-4b5a-988f-01854f9e6a86}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method disables the unit if not all safety requirements are met. It Should be called only from the safety management.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD switchOff
+]]></Declaration>
+    </Method>
+    <Method Name="switchOn" Id="{f6abdd09-b2ae-445f-890e-4d0df9252b81}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method enables the unit if all safety requirements are met. It Should be called only from the safety management.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD switchOn
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

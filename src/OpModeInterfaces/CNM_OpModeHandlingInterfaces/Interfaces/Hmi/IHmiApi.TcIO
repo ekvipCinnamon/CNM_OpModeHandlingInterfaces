@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="IHmiApi" Id="{1c476f2f-f6b0-4f32-a844-1ef01edf80cc}">
+    <Declaration><![CDATA[(*
+## short summary
+
+This interface provides control methods and properties for a HMI handler class that are called by the CNM HMI framework.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE IHmiApi EXTENDS __SYSTEM.IQueryInterface, IRunable 
+]]></Declaration>
+    <Method Name="getRootNodeName" Id="{896c8991-6879-4618-9613-f86d6ecb3cc2}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This method returns the instance path of the root node of the operation mode handler.
+It is used for the HMI tree building mechanism.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+{attribute 'TcRpcEnable'}
+METHOD getRootNodeName : Tc2_System.T_MaxString
+]]></Declaration>
+    </Method>
+    <Property Name="IsSafetyOk" Id="{69ed49f4-ad1d-49d2-a38b-4430c32858fb}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property is true if the operation mode handler has a safety release.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+{attribute 'monitoring':='call'}
+PROPERTY IsSafetyOk : BOOL]]></Declaration>
+      <Get Name="Get" Id="{2cbcda99-83b4-4024-8ad2-711f30270116}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="OpModeState" Id="{63c3876c-ddcd-40a1-b2bb-df20e5fec565}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property can returns the root node state for currently active operation mode.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+{attribute 'monitoring' := 'call'}
+PROPERTY OpModeState : CNM_ReturnTypes.SingleExecutionState
+]]></Declaration>
+      <Get Name="Get" Id="{4da85249-757f-43d9-9aed-e46b18198251}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="pause" Id="{d1a764d8-0cf7-4113-b9ce-f7becb778b7f}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property can be used to pause the currently running operation mode from the HMI and to read back if the mode is paused.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+{attribute 'monitoring':='call'}
+PROPERTY pause : BOOL]]></Declaration>
+      <Get Name="Get" Id="{74a2305f-7d0d-44c1-af09-c95aab93a5d7}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{163e080a-9034-479d-9b6a-d7c8cfebd787}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="rootNodeWaitingForStep" Id="{e2f4d736-87d1-4d49-8f45-04ce1fe77347}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property shows that the root node (and so the whole machine) is waiting for a step signal when step mode is enabled.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+{attribute 'monitoring' := 'call'}
+PROPERTY rootNodeWaitingForStep : BOOL]]></Declaration>
+      <Get Name="Get" Id="{045c8e6b-ab08-48fa-b01d-d0e49bb35b4e}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="step" Id="{e10dcd66-f5a4-43fe-954a-2c7ac9b42981}">
+      <Declaration><![CDATA[(*
+## short summary
+
+This property setter sends the step signal to all nodes of the machine.
+If the step mode is enabled, the step signal will be set for exactly one PLC cycle.
+If the step mode isn't enabled, the step signal won't have any effect at all.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+{attribute 'monitoring':='call'}
+PROPERTY step : BOOL
+
+]]></Declaration>
+      <Set Name="Set" Id="{ea65fe25-1e6c-4aca-93f7-f4a3760b7d18}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+  </Itf>
+</TcPlcObject>

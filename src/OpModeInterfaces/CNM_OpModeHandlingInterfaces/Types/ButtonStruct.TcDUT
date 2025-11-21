@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="ButtonStruct" Id="{a25b64a7-0486-4a8b-83de-4f7e52ad0e61}">
+    <Declaration><![CDATA[TYPE ButtonStruct :
+STRUCT
+	text : Tc2_System.T_MaxString;
+	enabled :BOOL := FALSE;
+	visible :BOOL := FALSE;
+	pressed :BOOL := FALSE;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <Itf Name="INode" Id="{2d52b12a-f93e-4225-88dd-602ade75bf2c}">
+    <Declaration><![CDATA[(*
+## short summary
+This interface provides methods and properties that every node needs to implement.
+Some of the methods and properties are used for the CNM HMI framework.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+INTERFACE INode EXTENDS CNM_AbstractObject.IObject
+]]></Declaration>
+    <Property Name="currentModeId" Id="{a6806290-bfe8-4a2c-bce1-7a92cf52bff7}">
+      <Declaration><![CDATA[(*
+## short summary
+This property returns the id of the mode that is currently propagated.
+It reflects the hmi selection.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY currentModeId : UDINT
+]]></Declaration>
+      <Get Name="Get" Id="{a65e5059-75ab-4756-b851-06434bd23df0}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Method Name="disable" Id="{4e782427-5536-4f38-9c3a-e1123f873bbc}">
+      <Declaration><![CDATA[(*
+## short summary
+This method disables a node (E.g. axes should be disabled). It can take mutliple cycles. It has to be implemented for every node/device.
+The execute input needs a rising edge to execute the method.
+If there is nothing to disable, just return a 'SUCCESS' state.
+
+This method is called automatically by the operation mode handler.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD disable : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="enable" Id="{5c504ff3-94a9-4826-8394-ba7c265decfa}">
+      <Declaration><![CDATA[(*
+## short summary
+This method enables a node. It can take mutliple cycles. It has to be implemented for every node/device.
+The intention is to enable devices here, e.g. axes, laser, dispenser etc.
+The execute input needs a rising edge to execute the method.
+If there is nothing to enable, just return a 'SUCCESS' state.
+
+This method is called automatically by the operation mode handler.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD enable : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="enableStepping" Id="{22ef20db-8294-480f-93d5-28899e435e39}">
+      <Declaration><![CDATA[(*
+## short summary
+This property is used to enable/disable manual stepping.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY enableStepping : BOOL]]></Declaration>
+      <Get Name="Get" Id="{a359a807-b8a7-4a16-9555-d428cb64d83e}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{c587504d-2132-4188-adae-e7a68c028c4e}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="getSubnodeName" Id="{255f25d4-9c60-43f7-be3b-9a4fa1280154}">
+      <Declaration><![CDATA[(*
+## short summary
+This method returns the variable name for a subnode at a given array index of the internal array list.
+It is required for the HMI connection to construct the node tree from the PLC on HMI side.
+It is also intended to be called from the HMI via remote procedure call.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD getSubnodeName : CNM_AbstractObject.ObjectName
+VAR_INPUT
+	(*  index of a subnode in the subnode array list *)
+	index :UDINT;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="hasError" Id="{c8be20d2-ffb0-47df-960a-4101466a59a1}">
+      <Declaration><![CDATA[(*
+## short summary
+This property indicates whether a node has an error. It is used by the CNM HMI.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+{attribute 'monitoring' := 'call'}
+PROPERTY hasError : BOOL]]></Declaration>
+      <Get Name="Get" Id="{18010ec1-13fe-439f-bf6c-0bb5bcad8881}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{8b7121b5-1fd3-4424-b569-855da9c74159}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="initialize" Id="{9a5d12c2-dd4e-4834-9211-383938a7f814}">
+      <Declaration><![CDATA[(*
+## short summary
+This method contains instructions and sequences for the init mode.
+This mode is intended for initializing a machine, e.g. set references and parameters, establish a connection to global production systems (MES).
+If the node should do nothing, return a 'SUCCESS'.
+It should run until all initializations are done or the mode is stopped immedtiately or a stop request is raised.
+This method is called automatically by the operation mode handler after PLC startup.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+METHOD initialize : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Property Name="isInHome" Id="{feb8f9a9-6e87-4d30-8796-2984a2ee21c9}">
+      <Declaration><![CDATA[(*
+## short summary
+This property indicates that a node or subunit is home position. The getter evaluates the home property of all child nodes.  
+It is used by the CNM HMI.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+{attribute 'monitoring' := 'call'}
+PROPERTY isInHome : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{27b005f8-b876-40f3-b120-0d8edd0e6638}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{e47d4bad-3134-4b4e-9154-165e265f908e}">
+        <Declaration><![CDATA[VAR
+END_VAR
+]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="isWaitingForStep" Id="{50267af7-c7e4-4ee5-975c-44e7d330a2f8}">
+      <Declaration><![CDATA[(*
+## short summary
+This property indicates that a node or subunit is waiting for a step signal. It is used by the CNM HMI.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+{attribute 'monitoring' := 'call'}
+PROPERTY isWaitingForStep : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{f855c269-a2e6-490c-bce2-5af45a3281c9}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{3d77209c-4802-4414-85d9-fabe119788fe}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="localOverride" Id="{a13af4d6-42f8-4015-8386-ad246df39a85}">
+      <Declaration><![CDATA[(*
+## short summary
+This property is used to set a local override for single node. 
+The local override will be multiplied with the global override.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+{attribute 'monitoring' := 'variable'}
+PROPERTY localOverride : LREAL]]></Declaration>
+      <Get Name="Get" Id="{7fdcd6e7-6ac6-4026-8349-e13a34770ac7}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{67ee7ffd-b067-4017-8872-2be774b0cd73}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Property Name="nodeControl" Id="{d2b0286f-3718-44de-8cc0-36564d81d350}">
+      <Declaration><![CDATA[(*
+## short summary
+This property returns the interface to the instance mode data dto.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+PROPERTY nodeControl : INodeControl]]></Declaration>
+      <Get Name="Get" Id="{5f0b1aed-f475-4c82-8bf6-0538fcf43abb}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="nodeState" Id="{01934ab8-5287-44d8-9aac-e7702f3b4b37}">
+      <Declaration><![CDATA[(*
+## short summary
+This property returns the state of the node for the current node request.
+The unit is still running if the state is ''BUSY''.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+{attribute 'monitoring' := 'call'}
+PROPERTY nodeState : CNM_ReturnTypes.SingleExecutionState]]></Declaration>
+      <Get Name="Get" Id="{248cca7b-a0e9-436a-9015-e6790e85048d}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+    </Property>
+    <Property Name="step" Id="{62f91279-ca91-4ee7-9b15-19296156df59}">
+      <Declaration><![CDATA[(*
+## short summary
+This boolean can be used to set the step signal for a node for one plc cycle.
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2025 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+PROPERTY step : BOOL
+]]></Declaration>
+      <Get Name="Get" Id="{3e510cb9-2ac5-47ce-b169-00dc8e3094c1}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Get>
+      <Set Name="Set" Id="{b94557f7-e1b0-439f-926c-c541c3354d52}">
+        <Declaration><![CDATA[]]></Declaration>
+      </Set>
+    </Property>
+    <Method Name="stopImmediate" Id="{c35427a9-7e43-4725-aeb2-4bad08e6bf97}">
+      <Declaration><![CDATA[(*
+## short summary
+This method executes stops all movements of a node. It has to be overwritten for every node.
+E.g. axes should perform a quickstop, cylinders should be turned off, etc.
+If the node should do nothing, return a 'SUCCESS'.
+It should stop axes/cylinders/process (e.g. laser welding, dispensing) endless until the manual mode is stopped via stop request or immediate stop.
+This method is called automatically by the operation mode handler before disabling the machine or if the operator selects an immediate stop.
+
+**attention**: If this method returns the state 'ERROR', the operation mode handler automatically disables the whole machine!
+
+legal notes
+=================
+| SPDX-FileCopyrightText: © 2024 ekvip automation GmbH <info@ekvip.de>
+| SPDX-License-Identifier: Apache-2.0
+| For details check: Apache-2.0_
+
+.. _Apache-2.0: https://www.apache.org/licenses/LICENSE-2.0
+
+.. </legal notes>  
+
+*)
+
+METHOD stopImmediate : CNM_ReturnTypes.SingleExecutionState
+VAR_INPUT
+	execute :BOOL;
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>
