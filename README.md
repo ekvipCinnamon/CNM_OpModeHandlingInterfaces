@@ -11,7 +11,7 @@ This is a TwinCAT 3 library project for operation mode handling interfaces.
 
 ## Documentation Location
 
-You will find the detailed library documentation at the [cinnamon docs](https://static.ekvip.de/docs/CNM_OpmodeHandlingInterfaces/0.1.1.0/)
+You will find the detailed library documentation at the [cinnamon docs](https://static.ekvip.de/docs/CNM_OpModeHandlingInterfaces/0.1.1.0/)
 
 ## Purpose
 
